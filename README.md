@@ -1,6 +1,6 @@
-#Elevator simulation
-___
-##Description
+# Elevator simulation
+
+## Description
 Simulation of elevator serving passengers which randomly spawning on floors,
 calling elevator and going to their destinations.
 
@@ -9,7 +9,7 @@ calling elevator and going to their destinations.
 `simulator.py` - entrypoint of simulation
 
 
-##Setup and run
+## Setup and run
 
 - Use python@3.10 or above
 - Clone repository
@@ -20,5 +20,5 @@ calling elevator and going to their destinations.
 
 TIP: adjust creation of `Simulator` instance in `simulator.py` to get desired simulation results.
 
-###Tests
+### Tests
 - `pytest --cov=elevator`
