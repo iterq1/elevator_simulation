@@ -32,6 +32,8 @@ def test_pas_changes_status_when_el_called(passenger, elevator):
 @mock.patch('elevator.Elevator.enter')
 def test_waiting_pas_tries_enter_el_on_same_floor(enter_mock: mock.Mock, passenger, elevator):
     elevator._current_floor = passenger.spawn_floor
+    elevator._doors_open = True
+
     passenger.act_on_status(elevator)
 
     enter_mock.assert_called_once_with(passenger)
@@ -50,7 +52,9 @@ def test_waiting_pas_become_spawned_after_waiting(
     """
     is_full_mock.return_value = True
     elevator._current_floor = passenger.spawn_floor
+    elevator._doors_open = True
 
     passenger.act_on_status(elevator)
+
     assert passenger.status == PassengerStatus.SPAWNED
 
